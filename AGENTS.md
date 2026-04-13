@@ -14,11 +14,19 @@
 ### パス
 - ステアリング: `.exec-plans/steering/`
 - 仕様: `.exec-plans/specs/`
+- 製品コード: `apps/<product-name>/`
 
 ### ステアリング vs 仕様
 
 **ステアリング** (`.exec-plans/steering/`) - プロジェクト全体のルールとコンテキストで AI をガイドする
 **仕様** (`.exec-plans/specs/`) - 個別の機能の開発プロセスを形式化する
+
+### ディレクトリルール
+- ルート直下はエージェント運用、仕様、テンプレート、全体設定のために使用する
+- 実際のブラウンフィールド製品コードは `apps/<product-name>/` 配下に配置する
+- `myproduct` は説明用のプレースホルダーであり、実運用では実際の製品名を `kebab-case` で使用する
+- C++ と Python が混在する場合も、まず製品単位で `apps/<product-name>/` にまとめ、その配下で言語別または既存構造を維持して整理する
+- 製品固有のルールは `apps/<product-name>/AGENTS.md` またはその下位ディレクトリの `AGENTS.md` に記述する
 
 ### アクティブな仕様
 - アクティブな仕様については `.exec-plans/specs/` を確認する
